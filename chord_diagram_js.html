@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilfsgelder Chord Diagramm 2020 - Live Processing</title>
+    <link rel="stylesheet" href="chord_diagram_js.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <h1 id="main-title">International Aid Funds</h1>
+    <div id="title-year-display">Current Year: <span id="title-year">2020</span></div>
+    
+    <div id="container">
+        <div id="main-content">
+            <div id="chart"></div>
+            
+            <div id="right-section">
+                <div id="legend-section">
+                    <div class="legend-item-inline" id="donors-dropdown-container">
+                        <div id="donors-clickarea"></div>
+                        <div class="legend-label donor-legend" id="donors-toggle">Donors</div>
+                        <div class="legend-line-container">
+                            <div class="legend-line donor-line"></div>
+                            <div class="dropdown-indicator donor-indicator">
+                                <span class="indicator-line"></span>
+                                <span class="indicator-line"></span>
+                            </div>
+                        </div>
+                        <div id="donors-list" class="dropdown-list" style="display: none;">
+                            <!-- Wird dynamisch gefüllt -->
+                        </div>
+                    </div>
+                    <div class="legend-item-inline" id="recipients-dropdown-container">
+                        <div id="recipients-clickarea"></div>
+                        <div class="legend-label recipient-legend" id="recipients-toggle">Recipients</div>
+                        <div class="legend-line-container">
+                            <div class="legend-line recipient-line"></div>
+                            <div class="dropdown-indicator recipient-indicator">
+                                <span class="indicator-line"></span>
+                                <span class="indicator-line"></span>
+                            </div>
+                        </div>
+                        <div id="recipients-list" class="dropdown-list" style="display: none;">
+                            <!-- Wird dynamisch gefüllt -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="small-charts">
+                    <div class="small-chart-container">
+                        <div class="small-chart-title" id="title-chart-1">United States</div>
+                        <div id="chart-usa" class="small-chart"></div>
+                    </div>
+                    <div class="small-chart-container">
+                        <div class="small-chart-title" id="title-chart-2">Germany</div>
+                        <div id="chart-germany" class="small-chart"></div>
+                    </div>
+                    <div class="small-chart-container">
+                        <div class="small-chart-title" id="title-chart-3">Japan</div>
+                        <div id="chart-japan" class="small-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="data-info">
+            Data unit: USD (Million)<br>
+            Source: data-explorer.oecd.org
+        </div>
+        
+        <div id="timeline-container">
+            <div id="timeline-label">Year</div>
+            <div id="timeline">
+                <div id="timeline-track"></div>
+                <input type="range" id="year-slider" min="1960" max="2023" value="2020" step="1">
+                <div id="year-markers">
+                    <span>1960</span>
+                    <span>1970</span>
+                    <span>1980</span>
+                    <span>1990</span>
+                    <span>2000</span>
+                    <span>2010</span>
+                    <span>2020</span>
+                    <span>2023</span>
+                </div>
+            </div>
+            <div id="current-year">2020</div>
+        </div>
+    </div>
+    
+    <div class="tooltip" id="tooltip"></div>
+
+    <script src="chord_diagram.js"></script>
+</body>
+</html>
