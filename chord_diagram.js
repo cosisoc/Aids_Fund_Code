@@ -269,8 +269,8 @@ async function loadSingleRecipientData(recipientName, year = 2020) {
 }
 
 function createChordDiagram(data) {
-    const width = 1400;
-    const height = 1400;
+    const width = 750;
+    const height = 750;
     const outerRadius = Math.min(width, height) * 0.42;
     const innerRadius = outerRadius - 30;
 
@@ -790,8 +790,8 @@ function createSmallChordDiagram(data, containerId) {
     
     // Wenn keine Daten vorhanden, "No Data" Platzhalter anzeigen
     if (!data) {
-        const width = 260;
-        const height = 260;
+        const width = 160;
+        const height = 160;
         
         const svg = d3.select(containerId)
             .append("svg")
@@ -822,8 +822,8 @@ function createSmallChordDiagram(data, containerId) {
         return;
     }
     
-    const width = 260;
-    const height = 260;
+    const width = 160;
+    const height = 160;
     const outerRadius = Math.min(width, height) * 0.4;
     const innerRadius = outerRadius - 14;
     
